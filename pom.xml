@@ -28,9 +28,29 @@
 			<version>2.1.7</version>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>2.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+
 	</dependencies>
-	
-	 <build>
-      <finalName>holamundo</finalName>  
-   </build>
+
+	<build>
+		<finalName>holamundo</finalName>
+	</build>
 </project>
