@@ -10,13 +10,12 @@ import javax.faces.bean.RequestScoped;
 public class HolaMundo 
 {
 	@ManagedProperty(value="#{mensaje}")
-
-	private MensajeBean mensajeBean;
 	private String mensaje;
-
+	private MensajeBean mensajeBean;
+	
 	public HolaMundo()
 	{
-		System.out.println("Hola mundo ha empezado!");   
+		System.out.println("Hola mundo ha empezado!");
 	}
 
 	public String getMensaje()
@@ -31,5 +30,10 @@ public class HolaMundo
 	public void setMensajeBean(MensajeBean m) 
 	{
 		this.mensajeBean = m;
+	}
+	
+	public void getMensajeSimple()
+	{
+		return "mensaje simple de holamundo";
 	}
 }
