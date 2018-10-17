@@ -12,3 +12,4 @@ out/
 /bootstrap
 /dependencies.xml
 .java-version
+.settings
