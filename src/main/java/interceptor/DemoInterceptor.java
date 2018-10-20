@@ -1,7 +1,7 @@
 package interceptor;
 
-public class DemoInterceptor {
-
+public class DemoInterceptor
+{
 	public static void main( String[] args ) 
 	{
 		FilterManager _filterManager = new FilterManager( new MyInterface() );
@@ -11,7 +11,5 @@ public class DemoInterceptor {
 		_client.setFilterManager( _filterManager );
 		
 		_client.sendRequest( 500 );
-		
 	}
-
 }

@@ -9,7 +9,7 @@ public class CalculateDistance implements Filter
 	{
 		double revolutions = (Double) o;
 		double distance = (revolutions - this._prevRevol) * 2 * this._RADIUS * Math.PI;
-		_prevRevol = revolutions;
+		this._prevRevol = revolutions;
 		
 		return distance;
 	}
