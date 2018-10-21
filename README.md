@@ -2,6 +2,10 @@
 
 Practical work from the subject _Desarrollo de Sistemas Sofware basados en componentes y servicios_
 
+## Showcase
+
+![Screenshot](doc/screen-recording.gif)
+
 ## Development environment configuration
 
 1. [Download](https://www.eclipse.org/downloads/) and install Eclipse for EE development
@@ -12,7 +16,3 @@ Practical work from the subject _Desarrollo de Sistemas Sofware basados en compo
 6. Execute _Maven install_
 7. Add the generated .WAR to the Server and launch it
 6. Go to your favourite localhost port
-
-## Refences
-
-* http://www.tutorialspoint.com/jsf/
