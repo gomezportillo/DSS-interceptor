@@ -5,7 +5,7 @@
   <artifactId>interceptor</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>holamundo Maven Webapp</name>
+  <name>Interceptor</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
