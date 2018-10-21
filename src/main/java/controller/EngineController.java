@@ -1,4 +1,4 @@
-package interceptor;
+package controller;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
@@ -6,9 +6,11 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
-@ManagedBean(name = "webController", eager = true)
+import aux.Variables;
+
+@ManagedBean(name = "engineController", eager = true)
 @SessionScoped
-public class WebController implements Serializable
+public class EngineController implements Serializable
 {
 
 	private static final long serialVersionUID = -398064717122939161L;
@@ -22,33 +24,53 @@ public class WebController implements Serializable
 	@ManagedProperty( value = "#{textAccelerate}" )
 	private String textAccelerate;
 
-	private boolean state = Variables.STATE_ENGINE_OFF;
+	private Variables.Engine_state state;
 
-	public WebController()
+	public EngineController()
 	{ 
 		System.out.println("Creating web controller");
+		
+		this.state = Variables.Engine_state.OFF;
 	}
 
 	public void toggleOnOff( ActionEvent e )
 	{
-		if ( this.state == Variables.STATE_ENGINE_ON )
+		if ( this.state == Variables.Engine_state.ON )
 		{
-			System.out.println("Turning off...");
-			this.textState = Variables.TXT_ENGINE_OFF;
-			this.textOnOff = Variables.TXT_TURN_ON;
+			turn_off_engine();
 		}
 		else
 		{
-			System.out.println("Turning on...");
-			this.textState = Variables.TXT_ENGINE_ON;
-			this.textOnOff = Variables.TXT_TURN_OFF;
+			turn_on_engine();
 		}
-		this.state = !this.state;
 	}
 
 	public void accelerate( ActionEvent e )
 	{
+		accelerate_engine();
+	}
+	
+	private void turn_off_engine()
+	{
+		System.out.println("Turning off...");
+		this.state = Variables.Engine_state.OFF;
+		this.textState = Variables.TXT_ENGINE_OFF;
+		this.textOnOff = Variables.TXT_TURN_ON;
+	}
+	
+	private void turn_on_engine()
+	{
+		System.out.println("Turning on...");
+		this.state = Variables.Engine_state.ON;
+		this.textState = Variables.TXT_ENGINE_ON;
+		this.textOnOff = Variables.TXT_TURN_OFF;
+	}
+	
+	private void accelerate_engine()
+	{
 		System.out.println("Accelerating...");
+		this.state = Variables.Engine_state.ACCELERATING;
+		this.textState = Variables.TXT_ENGINE_ACCELERATING;
 	}
 
 	public String getTextState() 
@@ -92,6 +114,4 @@ public class WebController implements Serializable
 	{
 		this.textAccelerate = t;
 	}
-
-
 }

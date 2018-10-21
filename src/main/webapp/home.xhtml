@@ -12,19 +12,19 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
 
-	<title>Interceptor pattern</title>
+	<title>Engine page</title>
 </h:head>
 
 <h:body>
-	<h1>#{webController.textState}</h1>
+	<h1>#{engineController.textState}</h1>
 
 	<h:form>
-		<h:commandButton id="btnOnOff" value="#{webController.textOnOff}"
-			actionListener="#{webController.toggleOnOff}" />
+		<h:commandButton id="btnOnOff" value="#{engineController.textOnOff}"
+			actionListener="#{engineController.toggleOnOff}" />
 
 		<h:commandButton id="btnAccelerate"
-			value="#{webController.textAccelerate}"
-			actionListener="#{webController.accelerate}" />
+			value="#{engineController.textAccelerate}"
+			actionListener="#{engineController.accelerate}" />
 	</h:form>
 
 </h:body>
