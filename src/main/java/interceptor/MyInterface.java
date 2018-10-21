@@ -24,13 +24,10 @@ public class MyInterface {
 			{
 				Desktop.getDesktop().browse( new URI( this._URL ) );
 			} 
-			catch (IOException e) 
+			catch (IOException | URISyntaxException e) 
 			{
-				System.out.println("IO exception opening browser on Windows/Mac");
-			} 
-			catch (URISyntaxException e)
-			{
-				System.out.println("URI syntax exception opening browser on Windows/Mac");
+				System.out.println("Exception opening browser on Windows/Mac");
+				System.out.println( e.getStackTrace() );
 			}
 		} 
 		else // Ubuntu
@@ -42,7 +39,8 @@ public class MyInterface {
 			} 
 			catch (IOException e) 
 			{
-				System.out.println("IO exception opening browser on Linux");
+				System.out.println("Exception opening browser on Linux");
+				System.out.println( e.getStackTrace() );
 			}
 		}
 	}
