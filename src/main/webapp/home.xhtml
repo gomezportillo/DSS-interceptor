@@ -7,25 +7,44 @@
 <h:head>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
 
 	<title>Engine page</title>
 </h:head>
 
 <h:body>
-	<h1>#{engineController.textState}</h1>
-	<hr />
-	<h:form>
-		<h:commandButton id="btnOnOff" value="#{engineController.textOnOff}"
-			actionListener="#{engineController.toggleOnOff}" />
+	<div class="container">
 
-		<h:commandButton id="btnAccelerate"
-			value="#{engineController.textAccelerate}"
-			disabled="#{engineController.btnAccelerateDisabled}"
-			actionListener="#{engineController.accelerate}" />
-	</h:form>
+		<div class="page-header">
+			<h1>
+				<span class="glyphicon glyphicon-wrench"></span> Engine web page 
+				<br>
+				</br><small>Desarrollo de Sistemas Software basados en Componentes y Servicios</small>
+			</h1>
+		</div>
 
+		<div class="row">
+			<div class="col-md-3 col-md-offset-4">
+				<h2>#{engineController.textState}</h2>
+				<hr />
+				<h:form>
+					<h:commandButton class="btn btn-block" id="btnOnOff"
+						value="#{engineController.textOnOff}"
+						actionListener="#{engineController.toggleOnOff}" />
+
+					<h:commandButton class="btn btn-block" id="btnAccelerate"
+						value="#{engineController.textAccelerate}"
+						disabled="#{engineController.btnAccelerateDisabled}"
+						actionListener="#{engineController.accelerate}" />
+				</h:form>
+			</div>
+		</div>
+
+	</div>
 </h:body>
 </html>
