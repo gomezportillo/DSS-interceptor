@@ -4,10 +4,10 @@ import javax.faces.event.ActionEvent;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "webController", eager = true)
-@RequestScoped
+@SessionScoped
 public class WebController implements Serializable
 {
 	private static final long serialVersionUID = 1L;
