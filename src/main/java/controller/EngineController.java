@@ -24,6 +24,9 @@ public class EngineController implements Serializable
 	@ManagedProperty( value = "#{textAccelerate}" )
 	private String textAccelerate;
 
+	@ManagedProperty( value = "#{btnAccelerateDisabled}" )
+	private boolean btnAccelerateDisabled;
+	
 	private Engine engine;
 	
 	public EngineController()
@@ -31,6 +34,7 @@ public class EngineController implements Serializable
 		System.out.println("Creating engine controller");
 
 		this.engine = new Engine();
+		this.btnAccelerateDisabled = true;
 	}
 
 	public void toggleOnOff( ActionEvent e )
@@ -56,6 +60,7 @@ public class EngineController implements Serializable
 		this.engine.turn_off();
 		this.textState = Variables.TXT_ENGINE_OFF;
 		this.textOnOff = Variables.TXT_TURN_ON;
+		this.btnAccelerateDisabled = Variables.TXT_BTN_ACCELERATE_DISABLED;
 	}
 
 	private void turn_on_engine()
@@ -64,6 +69,7 @@ public class EngineController implements Serializable
 		this.engine.turn_on();
 		this.textState = Variables.TXT_ENGINE_ON;
 		this.textOnOff = Variables.TXT_TURN_OFF;
+		this.btnAccelerateDisabled = Variables.TXT_BTN_ACCELERATE_ENABLED;
 	}
 
 	private void accelerate_engine()
@@ -116,5 +122,15 @@ public class EngineController implements Serializable
 	public void setTextAccelerate( String t )
 	{
 		this.textAccelerate = t;
+	}
+	
+	public boolean getBtnAccelerateDisabled()
+	{
+		return !this.btnAccelerateDisabled;	
+	}
+
+	public void setBtnAccelerateDisabled( boolean b )
+	{
+		this.btnAccelerateDisabled = b;
 	}
 }

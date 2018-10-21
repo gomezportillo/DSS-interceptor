@@ -6,10 +6,9 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
-
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
 
 	<title>Engine page</title>
@@ -17,13 +16,14 @@
 
 <h:body>
 	<h1>#{engineController.textState}</h1>
-
+	<hr />
 	<h:form>
 		<h:commandButton id="btnOnOff" value="#{engineController.textOnOff}"
 			actionListener="#{engineController.toggleOnOff}" />
 
 		<h:commandButton id="btnAccelerate"
 			value="#{engineController.textAccelerate}"
+			disabled="#{engineController.btnAccelerateDisabled}"
 			actionListener="#{engineController.accelerate}" />
 	</h:form>
 
