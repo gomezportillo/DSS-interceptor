@@ -15,6 +15,17 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
 
 	<title>Engine page</title>
+	
+	<style>
+		.dot 
+		{
+		  height: 25px;
+		  width: 25px;
+		  background-color: #{engineController.stateColor};
+		  border-radius: 50%;
+		  display: inline-block;
+		}
+	</style>
 </h:head>
 
 <h:body>
@@ -22,17 +33,20 @@
 
 		<div class="page-header">
 			<h1>
-				<span class="glyphicon glyphicon-wrench"></span> Engine web page 
-				<br>
-				</br><small>Desarrollo de Sistemas Software basados en Componentes y Servicios</small>
+				<span class="glyphicon glyphicon-wrench"></span> Engine web page <br>
+				</br>
+				<small>Desarrollo de Sistemas Software basados en
+					Componentes y Servicios</small>
 			</h1>
 		</div>
 
 		<div class="row">
-			<div class="col-md-3 col-md-offset-4">
-				<h2>#{engineController.textState}</h2>
+			<div class="col-md-5 col-md-offset-4">
+				
+					<h2><span class="dot"></span> #{engineController.textState}</h2>
+				
 				<hr />
-				<h:form>
+				<h:form class="col-md-8 col-md-offset-2">
 					<h:commandButton class="btn btn-block" id="btnOnOff"
 						value="#{engineController.textOnOff}"
 						actionListener="#{engineController.toggleOnOff}" />

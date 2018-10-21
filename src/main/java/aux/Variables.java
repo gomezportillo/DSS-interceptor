@@ -15,5 +15,9 @@ public class Variables
 	
 	public static final String TXT_ACCELERATE = "ACCELERATE";
 	
+	public static final String HTML_COLOR_RED = "red";
+	public static final String HTML_COLOR_GREEN = "green";
+	public static final String HTML_COLOR_YELLOW = "yellow";
+	
 	public static enum Engine_state {ON, OFF, ACCELERATING};
 };

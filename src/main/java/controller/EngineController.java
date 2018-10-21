@@ -27,6 +27,9 @@ public class EngineController implements Serializable
 	@ManagedProperty( value = "#{btnAccelerateDisabled}" )
 	private boolean btnAccelerateDisabled;
 	
+	@ManagedProperty( value = "#{stateColor}" )
+	private String stateColor;
+	
 	private Engine engine;
 	
 	public EngineController()
@@ -61,6 +64,7 @@ public class EngineController implements Serializable
 		this.textState = Variables.TXT_ENGINE_OFF;
 		this.textOnOff = Variables.TXT_TURN_ON;
 		this.btnAccelerateDisabled = Variables.TXT_BTN_ACCELERATE_DISABLED;
+		this.stateColor = Variables.HTML_COLOR_RED;
 	}
 
 	private void turn_on_engine()
@@ -70,6 +74,7 @@ public class EngineController implements Serializable
 		this.textState = Variables.TXT_ENGINE_ON;
 		this.textOnOff = Variables.TXT_TURN_OFF;
 		this.btnAccelerateDisabled = Variables.TXT_BTN_ACCELERATE_ENABLED;
+		this.stateColor = Variables.HTML_COLOR_GREEN;
 	}
 
 	private void accelerate_engine()
@@ -79,6 +84,7 @@ public class EngineController implements Serializable
 			System.out.println("Accelerating...");
 			this.engine.accelerate();
 			this.textState = Variables.TXT_ENGINE_ACCELERATING;
+			this.stateColor = Variables.HTML_COLOR_YELLOW;
 		}
 	}
 
@@ -132,5 +138,19 @@ public class EngineController implements Serializable
 	public void setBtnAccelerateDisabled( boolean b )
 	{
 		this.btnAccelerateDisabled = b;
+	}
+	
+	public void setStateColor( String c )
+	{
+		if ( this.stateColor == null)
+		{
+			this.stateColor = Variables.HTML_COLOR_RED;
+		}
+		this.stateColor = c;
+	}
+	
+	public String getStateColor()
+	{
+		return this.stateColor;
 	}
 }
