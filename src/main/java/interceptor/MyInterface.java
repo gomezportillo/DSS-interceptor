@@ -7,10 +7,11 @@ import java.net.URISyntaxException;
 
 public class MyInterface {
 
-	private final String _URL = "http://localhost:8080/interceptor/";
+	private String _URL;
 
 	public MyInterface()
 	{
+		this._URL = "http://localhost:8080/interceptor/faces/home.xhtml";
 	}
 
 	public void execute( double d )
