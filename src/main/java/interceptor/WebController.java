@@ -1,6 +1,6 @@
 package interceptor;
 
-import java.awt.event.ActionEvent;
+import javax.faces.event.ActionEvent;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
