@@ -24,18 +24,18 @@ public class EngineController implements Serializable
 	@ManagedProperty( value = "#{textAccelerate}" )
 	private String textAccelerate;
 
-	private Variables.Engine_state state;
-
+	private Engine engine;
+	
 	public EngineController()
 	{ 
-		System.out.println("Creating web controller");
-		
-		this.state = Variables.Engine_state.OFF;
+		System.out.println("Creating engine controller");
+
+		this.engine = new Engine();
 	}
 
 	public void toggleOnOff( ActionEvent e )
 	{
-		if ( this.state == Variables.Engine_state.ON )
+		if ( this.engine.is_on() || this.engine.is_accelerating() )
 		{
 			turn_off_engine();
 		}
@@ -49,28 +49,31 @@ public class EngineController implements Serializable
 	{
 		accelerate_engine();
 	}
-	
+
 	private void turn_off_engine()
 	{
 		System.out.println("Turning off...");
-		this.state = Variables.Engine_state.OFF;
+		this.engine.turn_off();
 		this.textState = Variables.TXT_ENGINE_OFF;
 		this.textOnOff = Variables.TXT_TURN_ON;
 	}
-	
+
 	private void turn_on_engine()
 	{
 		System.out.println("Turning on...");
-		this.state = Variables.Engine_state.ON;
+		this.engine.turn_on();
 		this.textState = Variables.TXT_ENGINE_ON;
 		this.textOnOff = Variables.TXT_TURN_OFF;
 	}
-	
+
 	private void accelerate_engine()
 	{
-		System.out.println("Accelerating...");
-		this.state = Variables.Engine_state.ACCELERATING;
-		this.textState = Variables.TXT_ENGINE_ACCELERATING;
+		if ( this.engine.is_on() )
+		{
+			System.out.println("Accelerating...");
+			this.engine.accelerate();
+			this.textState = Variables.TXT_ENGINE_ACCELERATING;
+		}
 	}
 
 	public String getTextState() 
